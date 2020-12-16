@@ -31,7 +31,7 @@ pipeline {
           submoduleCfg: [], 
           userRemoteConfigs: [[
           credentialsId: 'GitHub_jriosceiba', 
-          url:'https://github.com/jriosceiba/adn-backend.git'
+          url:'https://github.com/jriosceiba/adn-backend'
           ]]
         ])
         sh ' gradle --b ./microservicio/build.gradle clean '
