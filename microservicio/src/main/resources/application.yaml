@@ -4,7 +4,7 @@ jasypt:
       algorithm: PBEWithMD5AndDES
 
 server:
-   port: 9000
+   port: 8080
    servlet:
       context-path: /adn-jefferson-rios
       session:
