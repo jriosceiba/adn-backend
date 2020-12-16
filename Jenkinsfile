@@ -11,6 +11,12 @@ pipeline {
  	disableConcurrentBuilds()
   }
 
+  //Una sección que define las herramientas “preinstaladas” en Jenkins
+  tools {
+    jdk 'JDK11' //Preinstalada en la Configuración del Master
+    gradle 'Gradle4.1.0' //Preinstalada en la Configuración del Master
+  }
+
   //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
