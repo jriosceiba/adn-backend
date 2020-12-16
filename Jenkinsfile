@@ -34,28 +34,25 @@ pipeline {
           url:'https://github.com/jriosceiba/adn-backend.git'
           ]]
         ])
-      }
-    }
-
-    stage('Gradle compile') {
-      steps{
-        sh 'gradle --b ./microservicio/build.gradle clean compileJava'
+        sh ' gradle --b ./microservicio/build.gradle clean '
       }
     }
     
     stage('Compile & Unit Tests') {
       steps{
+        echo "------------>Compile project<------------"
+		    sh 'gradle --b ./microservicio/build.gradle compileJava'
+		
         echo "------------>Unit Tests<------------"
-        sh 'gradle --b ./microservicio/build.gradle clean'
-        sh 'gradle --b ./build.gradle test'
+		    sh 'gradle --b ./microservicio/build.gradle test'
       }
     }
 
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-        withSonarQubeEnv('Sonar') {
-            sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+        sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=./microservicio/infraestructura/sonar-project.properties"
+		sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=./microservicio/dominio/sonar-project.properties"
         }
       }
     }
