@@ -1,6 +1,5 @@
 package com.ceiba.parametro.servicio.testdatabuilder;
 
-import com.ceiba.dominio.enumeracion.TipoParametroEnum;
 import com.ceiba.infraestructura.constante.ConstantesInfraestructura;
 import com.ceiba.parametro.comando.ComandoParametro;
 
