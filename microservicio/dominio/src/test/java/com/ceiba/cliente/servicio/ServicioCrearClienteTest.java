@@ -1,6 +1,6 @@
 package com.ceiba.cliente.servicio;
 
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 import static org.mockito.Matchers.anyLong;
@@ -26,7 +26,7 @@ public class ServicioCrearClienteTest {
 	 * Test que permite corroborar duplicados
 	 */
 	@Test
-	public void validarUsuarioExistenciaPreviaTest() {
+	public void validarClienteExistenciaPreviaTest() {
 
 		Cliente cliente = new ClienteTestDataBuilder().build();
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);

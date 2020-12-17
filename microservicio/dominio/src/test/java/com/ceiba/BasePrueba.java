@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 import org.junit.Assert;
 
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 
 /**
  * Clase base para realizar pruebas unitarias

@@ -1,7 +1,5 @@
 package com.ceiba.parametro.modelo.entidad;
 
-import com.ceiba.dominio.enumeracion.TipoParametroEnum;
-
 import lombok.Getter;
 
 /**
@@ -31,5 +29,21 @@ public class Parametro {
 	/**
 	 * Corresponde al tipo de parametro asociado
 	 */
-	private TipoParametroEnum tipoParametro;
+	private String tipoParametro;
+
+	/**
+	 * Constructor de la clase
+	 * 
+	 * @param id,            el valor de la propiedad
+	 * @param nombre,        el valor de la propiedad
+	 * @param valor,         el valor de la propiedad
+	 * @param tipoParametro, el valor de la propiedad
+	 */
+	public Parametro(Long id, String nombre, String valor, String tipoParametro) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.valor = valor;
+		this.tipoParametro = tipoParametro;
+	}
 }

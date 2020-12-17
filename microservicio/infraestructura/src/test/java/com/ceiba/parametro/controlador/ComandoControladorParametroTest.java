@@ -1,14 +1,15 @@
-package com.ceiba.usuario.controlador;
+package com.ceiba.parametro.controlador;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoUsuarioTestDataBuilder;
+import com.ceiba.infraestructura.constante.ConstantesInfraestructura;
+import com.ceiba.parametro.comando.ComandoParametro;
+import com.ceiba.parametro.servicio.testdatabuilder.ComandoParametroTestDataBuilder;
+import com.ceiba.usuario.controlador.ComandoControladorUsuario;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,52 +20,57 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Clase de pruebas de integracion para el ente ComandoUsuario
+ * @author jefferson.rios, empresa CEIBA Software
+ *
+ */
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes= ApplicationMock.class)
 @WebMvcTest(ComandoControladorUsuario.class)
-public class ComandoControladorUsuarioTest {
+public class ComandoControladorParametroTest {
 
+	/**
+	 * Mapeador de objetos JSON
+	 */
     @Autowired
     private ObjectMapper objectMapper;
 
+    /**
+     * Mockeador de servlet
+     */
     @Autowired
     private MockMvc mocMvc;
 
+    /**
+     * Prueba de integracion a la API de crear
+     * @throws Exception
+     */
     @Test
     public void crear() throws Exception{
-        // arrange
-        ComandoUsuario usuario = new ComandoUsuarioTestDataBuilder().build();
+  
+        ComandoParametro parametro = new ComandoParametroTestDataBuilder().build();
 
-        // act - assert
-        mocMvc.perform(post("/usuarios")
+        mocMvc.perform(post(ConstantesInfraestructura.REQUEST_COMANDO_PARAMETRO)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(usuario)))
+                .content(objectMapper.writeValueAsString(parametro)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 2}"));
+                .andExpect(content().json(ConstantesInfraestructura.VALOR_TEST_CREAR_PARAMETRO));
     }
 
+    /**
+     * Prueba de integracion a la API de actualizar
+     * @throws Exception
+     */
     @Test
     public void actualizar() throws Exception{
-        // arrange
-        Long id = 2L;
-        ComandoUsuario usuario = new ComandoUsuarioTestDataBuilder().build();
 
-        // act - assert
-        mocMvc.perform(put("/usuarios/{id}",id)
+        Long id = ConstantesInfraestructura.ID_PARA_PRUEBA;
+        ComandoParametro parametro = new ComandoParametroTestDataBuilder().build();
+
+        mocMvc.perform(put(ConstantesInfraestructura.REQUEST_COMANDO_PARAMETRO_CON_ID,id)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(usuario)))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    public void eliminar() throws Exception {
-        // arrange
-        Long id = 2L;
-
-        // act - assert
-        mocMvc.perform(delete("/usuarios/{id}",id)
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON))
+                .content(objectMapper.writeValueAsString(parametro)))
                 .andExpect(status().isOk());
     }
 }

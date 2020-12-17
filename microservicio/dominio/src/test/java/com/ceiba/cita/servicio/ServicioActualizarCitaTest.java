@@ -1,6 +1,6 @@
 package com.ceiba.cita.servicio;
 
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 import static org.mockito.Matchers.any;
@@ -30,7 +30,7 @@ public class ServicioActualizarCitaTest {
 	 * Test que permite corroborar duplicados
 	 */
 	@Test
-	public void validarUsuarioExistenciaPreviaTest() {
+	public void validarCitaExistenciaPreviaTest() {
 
 		Cita cita = new CitaTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);

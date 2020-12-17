@@ -2,7 +2,7 @@ package com.ceiba.cliente.servicio;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 /**

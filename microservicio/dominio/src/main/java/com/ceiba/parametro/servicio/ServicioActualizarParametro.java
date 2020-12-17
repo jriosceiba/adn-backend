@@ -1,6 +1,6 @@
 package com.ceiba.parametro.servicio;
 
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.parametro.modelo.entidad.Parametro;
 import com.ceiba.parametro.puerto.repositorio.RepositorioParametro;
@@ -31,11 +31,10 @@ public class ServicioActualizarParametro {
 	 * Accion especifica a realizarse desde el servicio
 	 * 
 	 * @param parametro
-	 * @return
 	 */
-	public Parametro ejecutar(Parametro parametro) {
+	public void ejecutar(Parametro parametro) {
 		validarExistenciaPrevia(parametro);
-		return this.repositorioParametro.actualizar(parametro);
+		this.repositorioParametro.actualizar(parametro);
 	}
 
 	/**

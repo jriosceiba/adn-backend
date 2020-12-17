@@ -1,4 +1,4 @@
-package com.ceiba.dominio.constantes;
+package com.ceiba.dominio.constante;
 
 /**
  * Clase con constantes para usarse en el modulo de dominio

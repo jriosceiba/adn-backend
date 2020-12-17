@@ -15,16 +15,16 @@ public interface RepositorioParametro {
 	 * Permite crear un usuario
 	 * 
 	 * @param parametro, parametro a crear
-	 * @return el parametro creado
+	 * @return el id del parametro creado
 	 */
-	Parametro crear(Parametro parametro);
+	Long crear(Parametro parametro);
 
 	/**
 	 * Permite actualizar un parametro
 	 * 
 	 * @param parametro, parametro a actualizar
 	 */
-	Parametro actualizar(Parametro parametro);
+	void actualizar(Parametro parametro);
 
 	/**
 	 * Permite validar si existe un parametro con el nombre registrado

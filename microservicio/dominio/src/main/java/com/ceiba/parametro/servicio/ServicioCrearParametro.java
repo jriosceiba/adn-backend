@@ -1,6 +1,6 @@
 package com.ceiba.parametro.servicio;
 
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.parametro.modelo.entidad.Parametro;
 import com.ceiba.parametro.puerto.repositorio.RepositorioParametro;
@@ -31,9 +31,9 @@ public class ServicioCrearParametro {
 	 * Accion especifica a realizarse desde el servicio
 	 * 
 	 * @param parametro, parametro a crear
-	 * @return el parametro creado
+	 * @return el id del parametro creado
 	 */
-	public Parametro ejecutar(Parametro parametro) {
+	public Long ejecutar(Parametro parametro) {
 		validarExistenciaPrevia(parametro);
 		return this.repositorioParametro.crear(parametro);
 	}

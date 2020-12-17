@@ -1,7 +1,7 @@
 package com.ceiba.cliente.servicio.testdatabuilder;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.dominio.constantes.ConstantesDominio;
+import com.ceiba.dominio.constante.ConstantesDominio;
 import com.ceiba.parametro.modelo.entidad.Parametro;
 
 import java.time.LocalDate;

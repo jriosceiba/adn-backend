@@ -1,17 +1,22 @@
-package com.ceiba.parametro.modelo.dto;
+package com.ceiba.parametro.comando;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
- * Dto para transferencia - correspondiente al objeto Parametro
+ * Clase que representa el objeto Parametro desde el punto de vista de la
+ * aplicacion
  * 
  * @author jefferson.rios, empresa CEIBA Software
  *
  */
 @Getter
+@Setter
 @AllArgsConstructor
-public class DtoParametro {
+@NoArgsConstructor
+public class ComandoParametro {
 
 	/**
 	 * Corresponde al identificador primario de la clase
