@@ -26,7 +26,7 @@ public class ComandoParametroTestDataBuilder {
 	public ComandoParametroTestDataBuilder() {
 		nombre = UUID.randomUUID().toString();
 		valor = ConstantesInfraestructura.VALOR;
-		tipoParametro = TipoParametroEnum.CIUDAD.toString();
+		tipoParametro = ConstantesInfraestructura.PRUEBA_TIPO_PARAMETRO;
 	}
 
 	/**
@@ -63,8 +63,8 @@ public class ComandoParametroTestDataBuilder {
 	}
 
 	/**
-	 * Construye el objeto ComandoParametro, a partir de los datos suministrados por el data
-	 * builder
+	 * Construye el objeto ComandoParametro, a partir de los datos suministrados por
+	 * el data builder
 	 * 
 	 * @return, el ComandoParametro construido
 	 */

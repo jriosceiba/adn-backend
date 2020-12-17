@@ -108,6 +108,11 @@ public class ConstantesInfraestructura {
 	 * Constante estatica con el valor = 2L
 	 */
 	public static final Long ID_PARA_PRUEBA = 2L;
+	
+	/**
+	 * Constante estatica con el valor = CIUDAD
+	 */
+	public static final String PRUEBA_TIPO_PARAMETRO = "CIUDAD";
 
 	/**
 	 * Constructor de la clase
