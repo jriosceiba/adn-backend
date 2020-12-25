@@ -4,7 +4,7 @@ jasypt:
       algorithm: PBEWithMD5AndDES
 
 server:
-   port: 8080
+   port: 9000
    servlet:
       context-path: /adn-jefferson-rios
       session:
@@ -13,7 +13,7 @@ server:
 spring:
    datasource:
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:mysql://localhost:3306/adnceiba?autoReconnect=true&useSSL=false
+      jdbcUrl: jdbc:mysql://localhost:3306/adnceiba
       username: root
       password: CSH*1097403694
       hikari:

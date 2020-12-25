@@ -2,8 +2,6 @@ package com.ceiba.cliente.modelo.dto;
 
 import java.time.LocalDate;
 
-import com.ceiba.parametro.modelo.entidad.Parametro;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -38,9 +36,14 @@ public class DtoCliente {
 	private String telefono;
 
 	/**
-	 * Representa la ciudad del cliente
+	 * Representa el id de la ciudad del cliente
 	 */
-	private Parametro ciudad;
+	private Long idCiudad;
+
+	/**
+	 * Representa el nombre de la ciudad del cliente
+	 */
+	private String nombreCiudad;
 
 	/**
 	 * Representa la fecha de creacion del cliente

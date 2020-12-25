@@ -1,0 +1,1 @@
+insert into cita (servicio_id, fecha_hora,sede_id, cliente_id, descuento_id, porcentaje_descuento) values (:idServicio, :fechaHora, :idSede, :idCliente, :idDescuento, :porcentajeDescuento)

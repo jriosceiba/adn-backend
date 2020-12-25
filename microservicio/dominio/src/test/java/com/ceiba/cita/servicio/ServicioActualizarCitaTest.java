@@ -32,7 +32,8 @@ public class ServicioActualizarCitaTest {
 	@Test
 	public void validarCitaExistenciaPreviaTest() {
 
-		Cita cita = new CitaTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID).conFechaHora(LocalDateTime.now())
+				.conSede(ConstantesDominio.PRUEBA_ID).conServicio(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
 		Mockito.when(repositorioCita.existeExcluyendoId(Mockito.anyLong(), any(LocalDateTime.class))).thenReturn(true);
 		ServicioActualizarCita servicioActualizarCita = new ServicioActualizarCita(repositorioCita);
@@ -47,7 +48,9 @@ public class ServicioActualizarCitaTest {
 	@Test
 	public void ejecutarActualizarTest() {
 
-		Cita cita = new CitaTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID).conCliente(ConstantesDominio.PRUEBA_ID)
+				.conFechaHora(LocalDateTime.now()).conSede(ConstantesDominio.PRUEBA_ID)
+				.conServicio(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
 		Mockito.when(repositorioCita.existeExcluyendoId(Mockito.anyLong(), any(LocalDateTime.class))).thenReturn(false);
 		doNothing().when(repositorioCita).actualizar(cita);

@@ -1,5 +1,9 @@
 package com.ceiba.parametro.modelo.entidad;
 
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+
+import com.ceiba.dominio.constante.ConstantesDominio;
+
 import lombok.Getter;
 
 /**
@@ -40,7 +44,8 @@ public class Parametro {
 	 * @param tipoParametro, el valor de la propiedad
 	 */
 	public Parametro(Long id, String nombre, String valor, String tipoParametro) {
-		super();
+		validarObligatorio(nombre, ConstantesDominio.OBLIGATORIO_NOMBRE_PARAMETRO);
+		validarObligatorio(tipoParametro, ConstantesDominio.OBLIGATORIO_TIPO_PARAMETRO);
 		this.id = id;
 		this.nombre = nombre;
 		this.valor = valor;

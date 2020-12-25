@@ -12,16 +12,16 @@ import com.ceiba.usuario.comando.fabrica.FabricaUsuario;
 @Component
 public class ManejadorCrearUsuario implements ManejadorComandoRespuesta<ComandoUsuario, ComandoRespuesta<Long>> {
 
-    private final FabricaUsuario fabricaUsuario;
-    private final ServicioCrearUsuario servicioCrearUsuario;
+	private final FabricaUsuario fabricaUsuario;
+	private final ServicioCrearUsuario servicioCrearUsuario;
 
-    public ManejadorCrearUsuario(FabricaUsuario fabricaUsuario, ServicioCrearUsuario servicioCrearUsuario) {
-        this.fabricaUsuario = fabricaUsuario;
-        this.servicioCrearUsuario = servicioCrearUsuario;
-    }
+	public ManejadorCrearUsuario(FabricaUsuario fabricaUsuario, ServicioCrearUsuario servicioCrearUsuario) {
+		this.fabricaUsuario = fabricaUsuario;
+		this.servicioCrearUsuario = servicioCrearUsuario;
+	}
 
-    public ComandoRespuesta<Long> ejecutar(ComandoUsuario comandoUsuario) {
-        Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);
-        return new ComandoRespuesta<>(this.servicioCrearUsuario.ejecutar(usuario));
-    }
+	public ComandoRespuesta<Long> ejecutar(ComandoUsuario comandoUsuario) {
+		Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);
+		return new ComandoRespuesta<>(this.servicioCrearUsuario.ejecutar(usuario), true, "Creado");
+	}
 }

@@ -2,9 +2,7 @@ package com.ceiba.cita.modelo.dto;
 
 import java.time.LocalDateTime;
 
-import com.ceiba.cliente.modelo.dto.DtoCliente;
-import com.ceiba.parametro.modelo.dto.DtoParametro;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -14,6 +12,7 @@ import lombok.Getter;
  *
  */
 @Getter
+@AllArgsConstructor
 public class DtoCita {
 
 	/**
@@ -22,9 +21,14 @@ public class DtoCita {
 	private Long id;
 
 	/**
-	 * Corresponde al servicio a prestar
+	 * Corresponde al id del servicio a prestar
 	 */
-	private DtoParametro servicio;
+	private Long idServicio;
+
+	/**
+	 * Corresponde al nombre del servicio
+	 */
+	private String nombreServicio;
 
 	/**
 	 * Corresponde a la fecha y hora de la cita
@@ -32,12 +36,37 @@ public class DtoCita {
 	private LocalDateTime fechaHora;
 
 	/**
-	 * Corresponde a la sede relacionada a prestar el servicio
+	 * Corresponde al id de la sede relacionada a prestar el servicio
 	 */
-	private DtoParametro sede;
+	private Long idSede;
 
 	/**
-	 * Corresponde al cliente relacionado
+	 * Corresponde al nombre de la sede a prestar el servicio
 	 */
-	private DtoCliente cliente;
+	private String nombreSede;
+
+	/**
+	 * Corresponde al id del cliente relacionado
+	 */
+	private Long idCliente;
+
+	/**
+	 * Corresponde al nombre del cliente relacionado
+	 */
+	private String nombreCliente;
+
+	/**
+	 * Corresponde al valor del servicio
+	 */
+	private Double valorServicio;
+
+	/**
+	 * Corresponde al valor del descuento aplicado
+	 */
+	private Double valorDescuento;
+
+	/**
+	 * Corresponde al nombre del descuento si aplica
+	 */
+	private String nombreDescuento;
 }

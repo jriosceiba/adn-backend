@@ -1,8 +1,6 @@
 package com.ceiba.cita.servicio.testdatabuilder;
 
 import com.ceiba.cita.modelo.entidad.Cita;
-import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.parametro.modelo.entidad.Parametro;
 
 import java.time.LocalDateTime;
 
@@ -16,16 +14,15 @@ import java.time.LocalDateTime;
 public class CitaTestDataBuilder {
 
 	private Long id;
-	private Parametro servicio;
+	private Long idServicio;
 	private LocalDateTime fechaHora;
-	private Parametro sede;
-	private Cliente cliente;
+	private Long idSede;
+	private Long idCliente;
 
 	/**
 	 * Constructor general, con datos de prueba
 	 */
 	public CitaTestDataBuilder() {
-		fechaHora = LocalDateTime.now();
 	}
 
 	/**
@@ -45,8 +42,8 @@ public class CitaTestDataBuilder {
 	 * @param servicio, servicio a setear
 	 * @return
 	 */
-	public CitaTestDataBuilder conServicio(Parametro servicio) {
-		this.servicio = servicio;
+	public CitaTestDataBuilder conServicio(Long servicio) {
+		this.idServicio = servicio;
 		return this;
 	}
 
@@ -67,8 +64,8 @@ public class CitaTestDataBuilder {
 	 * @param telefono, telefono a setear
 	 * @return
 	 */
-	public CitaTestDataBuilder conSede(Parametro sede) {
-		this.sede = sede;
+	public CitaTestDataBuilder conSede(Long sede) {
+		this.idSede = sede;
 		return this;
 	}
 
@@ -78,8 +75,8 @@ public class CitaTestDataBuilder {
 	 * @param cliente, cliente a setear
 	 * @return
 	 */
-	public CitaTestDataBuilder conCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public CitaTestDataBuilder conCliente(Long cliente) {
+		this.idCliente = cliente;
 		return this;
 	}
 
@@ -90,6 +87,6 @@ public class CitaTestDataBuilder {
 	 * @return, la cita construida
 	 */
 	public Cita build() {
-		return new Cita(id, servicio, fechaHora, sede, cliente);
+		return new Cita(id, idServicio, fechaHora, idSede, idCliente);
 	}
 }

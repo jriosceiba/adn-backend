@@ -10,7 +10,7 @@ package com.ceiba.dominio.enumeracion;
  */
 public enum TipoParametroEnum {
 
-	SEDE("Sede"), CIUDAD("Ciudad"), DESCUENTO_CUMPLEANIOS("Descuento cumpleanios"),
+	SEDE("Sede"), CIUDAD("Ciudad"), DESCUENTO_ANUAL("Descuento anual"),
 	DESCUENTO_CANTIDAD("Descuento cantidad servicios"), DIA_FESTIVO("Dia festivo"), SERVICIO("Servicio");
 
 	/**

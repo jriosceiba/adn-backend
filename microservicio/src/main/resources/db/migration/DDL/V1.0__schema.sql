@@ -32,7 +32,11 @@ create table cita (
  fecha_hora datetime not null,
  sede_id int(11) not null,
  cliente_id int(11) not null,
+ descuento_id int(11),
+ porcentaje_descuento decimal(5,2),
  primary key(id),
  foreign key(sede_id) references parametro(id),
- foreign key(cliente_id) references cliente(id)
+ foreign key(servicio_id) references parametro(id),
+ foreign key(cliente_id) references cliente(id),
+ foreign key(descuento_id) references parametro(id)
 )

@@ -2,6 +2,8 @@ package com.ceiba.parametro.consulta;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.ceiba.parametro.modelo.dto.DtoParametro;
 import com.ceiba.parametro.puerto.dao.DaoParametro;
 
@@ -11,6 +13,7 @@ import com.ceiba.parametro.puerto.dao.DaoParametro;
  * @author jefferson.rios, empresa CEIBA Software
  *
  */
+@Component
 public class ManejadorListarParametros {
 
 	/**
@@ -35,5 +38,14 @@ public class ManejadorListarParametros {
 	 */
 	public List<DtoParametro> ejecutar() {
 		return this.daoParametro.listarTodos();
+	}
+
+	/**
+	 * lista todos los parametros registrados
+	 * 
+	 * @return el listado de parametros filtados por tipo
+	 */
+	public List<DtoParametro> ejecutar(String tipo) {
+		return this.daoParametro.listarPorTipo(tipo);
 	}
 }

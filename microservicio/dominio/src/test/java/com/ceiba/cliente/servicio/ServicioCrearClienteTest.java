@@ -5,6 +5,8 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
 import static org.mockito.Matchers.anyLong;
 
+import java.time.LocalDate;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -28,7 +30,10 @@ public class ServicioCrearClienteTest {
 	@Test
 	public void validarClienteExistenciaPreviaTest() {
 
-		Cliente cliente = new ClienteTestDataBuilder().build();
+		Cliente cliente = new ClienteTestDataBuilder().conNombre(ConstantesDominio.PRUEBA)
+				.conEmail(ConstantesDominio.PRUEBA_CORREO).conTelefono(ConstantesDominio.PRUEBA_TELEFONO)
+				.conFechaCreacion(LocalDate.now()).conCiudad(ConstantesDominio.PRUEBA_ID)
+				.conCiudad(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
 		Mockito.when(repositorioCliente.existe(Mockito.anyString())).thenReturn(true);
 		ServicioCrearCliente servicioCrearCliente = new ServicioCrearCliente(repositorioCliente);
@@ -43,7 +48,9 @@ public class ServicioCrearClienteTest {
 	@Test
 	public void ejecutarCrearTest() {
 
-		Cliente cliente = new ClienteTestDataBuilder().build();
+		Cliente cliente = new ClienteTestDataBuilder().conNombre(ConstantesDominio.PRUEBA)
+				.conEmail(ConstantesDominio.PRUEBA_CORREO).conTelefono(ConstantesDominio.PRUEBA_TELEFONO)
+				.conFechaCreacion(LocalDate.now()).conCiudad(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
 		Mockito.when(repositorioCliente.existe(Mockito.anyString())).thenReturn(false);
 		Mockito.when(repositorioCliente.crear(cliente)).thenReturn(anyLong());

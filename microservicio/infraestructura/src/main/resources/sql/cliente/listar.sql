@@ -1,0 +1,2 @@
+select cliente.id as id,cliente.nombre as nombre,cliente.email as email,cliente.telefono as telefono, parametro.id as ciudad_id, parametro.nombre as ciudad_nombre, cliente.fechaCreacion as fecha_creacion
+from cliente inner join parametro on parametro.id = cliente.ciudad_id order by cliente.fechaCreacion;

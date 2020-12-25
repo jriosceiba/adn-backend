@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.ceiba.cliente.modelo.dto.DtoCliente;
 
-
 /**
  * Interface que representa el puerto de entrada hacia las operaciones basicas
  * con los clientes
@@ -20,4 +19,13 @@ public interface DaoCliente {
 	 * @return, el listado general de clientes
 	 */
 	List<DtoCliente> listarTodos();
+
+	/**
+	 * Permite validar si el cliente esta cumpliendo aniversario dentro de la
+	 * aplicacion
+	 * 
+	 * @param idCliente, id del cliente a validar
+	 * @return
+	 */
+	boolean cumpliendoAnio(Long idCliente);
 }

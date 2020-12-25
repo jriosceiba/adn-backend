@@ -1,6 +1,5 @@
 package com.ceiba.parametro.controlador;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -44,7 +43,6 @@ public class ComandoControladorParametro {
 	 * @param manejadorCrearParametro,      el valor de la propiedad
 	 * @param manejadorActualizarParametro, el valor de la propiedad
 	 */
-	@Autowired
 	public ComandoControladorParametro(ManejadorCrearParametro manejadorCrearParametro,
 			ManejadorActualizarParametro manejadorActualizarParametro) {
 		super();

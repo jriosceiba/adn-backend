@@ -19,4 +19,12 @@ public interface DaoParametro {
 	 * @return, el listado de parametros registrados
 	 */
 	List<DtoParametro> listarTodos();
+
+	/**
+	 * Permite listar los parametros por su tipo
+	 * 
+	 * @param tipo, tipo de parametro a buscar
+	 * @return el listado de parametros por el tipo filtrado
+	 */
+	List<DtoParametro> listarPorTipo(String tipo);
 }

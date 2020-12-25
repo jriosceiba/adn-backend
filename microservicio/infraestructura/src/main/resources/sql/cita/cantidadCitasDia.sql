@@ -1,0 +1,1 @@
+select count(cita.id) from cita where fecha_hora between current_date() and :fechaHora and cita.cliente_id = :idCliente

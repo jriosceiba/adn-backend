@@ -1,8 +1,10 @@
 package com.ceiba.cliente.modelo.entidad;
 
-import java.time.LocalDate;
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+import static com.ceiba.dominio.ValidadorArgumento.validarRegex;
 
-import com.ceiba.parametro.modelo.entidad.Parametro;
+import java.time.LocalDate;
+import com.ceiba.dominio.constante.ConstantesDominio;
 
 import lombok.Getter;
 
@@ -38,7 +40,7 @@ public class Cliente {
 	/**
 	 * Representa la ciudad del cliente
 	 */
-	private Parametro ciudad;
+	private Long ciudad;
 
 	/**
 	 * Representa la fecha de creacion del cliente
@@ -55,8 +57,12 @@ public class Cliente {
 	 * @param ciudad,        ciudad del cliente
 	 * @param fechaCreacion, fecha de creacion del cliente
 	 */
-	public Cliente(Long id, String nombre, String email, String telefono, Parametro ciudad, LocalDate fechaCreacion) {
-		super();
+	public Cliente(Long id, String nombre, String email, String telefono, Long ciudad, LocalDate fechaCreacion) {
+		validarObligatorio(nombre, ConstantesDominio.OBLIGATORIO_NOMBRE_CLIENTE);
+		validarObligatorio(email, ConstantesDominio.OBLIGATORIO_EMAIL_CLIENTE);
+		validarObligatorio(telefono, ConstantesDominio.OBLIGATORIO_TELEFONO_CLIENTE);
+		validarObligatorio(ciudad, ConstantesDominio.OBLIGATORIO_CIUDAD_CLIENTE);
+		validarRegex(email, ConstantesDominio.REGEX_VALIDADOR_EMAIL, ConstantesDominio.FORMATO_EMAIL_INCORRECTO);
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;

@@ -1,8 +1,6 @@
 package com.ceiba.cliente.servicio.testdatabuilder;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.dominio.constante.ConstantesDominio;
-import com.ceiba.parametro.modelo.entidad.Parametro;
 
 import java.time.LocalDate;
 
@@ -19,17 +17,13 @@ public class ClienteTestDataBuilder {
 	private String nombre;
 	private String email;
 	private String telefono;
-	private Parametro ciudad;
+	private Long ciudad;
 	private LocalDate fechaCreacion;
 
 	/**
 	 * Constructor general, con datos de prueba
 	 */
 	public ClienteTestDataBuilder() {
-		nombre = ConstantesDominio.PRUEBA;
-		email = ConstantesDominio.PRUEBA_CORREO;
-		telefono = ConstantesDominio.PRUEBA_TELEFONO;
-		fechaCreacion = LocalDate.now();
 	}
 
 	/**
@@ -82,7 +76,7 @@ public class ClienteTestDataBuilder {
 	 * @param ciudad, ciudad a setear
 	 * @return
 	 */
-	public ClienteTestDataBuilder conCiudad(Parametro ciudad) {
+	public ClienteTestDataBuilder conCiudad(Long ciudad) {
 		this.ciudad = ciudad;
 		return this;
 	}
