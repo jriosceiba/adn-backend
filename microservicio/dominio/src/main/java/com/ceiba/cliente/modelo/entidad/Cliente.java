@@ -2,6 +2,8 @@ package com.ceiba.cliente.modelo.entidad;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 import static com.ceiba.dominio.ValidadorArgumento.validarRegex;
+import static com.ceiba.dominio.ValidadorArgumento.validarLongitudMaxima;
+import static com.ceiba.dominio.ValidadorArgumento.validarNumerico;
 
 import java.time.LocalDate;
 import com.ceiba.dominio.constante.ConstantesDominio;
@@ -62,7 +64,15 @@ public class Cliente {
 		validarObligatorio(email, ConstantesDominio.OBLIGATORIO_EMAIL_CLIENTE);
 		validarObligatorio(telefono, ConstantesDominio.OBLIGATORIO_TELEFONO_CLIENTE);
 		validarObligatorio(ciudad, ConstantesDominio.OBLIGATORIO_CIUDAD_CLIENTE);
+		validarLongitudMaxima(nombre, ConstantesDominio.VALOR_LONGITUD_MAXIMA_NOMBRE_CLIENTE,
+				ConstantesDominio.LONGITUD_MAXIMA_NOMBRE_CLIENTE);
+		validarLongitudMaxima(email, ConstantesDominio.VALOR_LONGITUD_MAXIMA_EMAIL_CLIENTE,
+				ConstantesDominio.LONGITUD_MAXIMA_EMAIL_CLIENTE);
+		validarLongitudMaxima(telefono, ConstantesDominio.VALOR_LONGITUD_MAXIMA_TELEFONO_CLIENTE,
+				ConstantesDominio.LONGITUD_MAXIMA_TELEFONO_CLIENTE);
 		validarRegex(email, ConstantesDominio.REGEX_VALIDADOR_EMAIL, ConstantesDominio.FORMATO_EMAIL_INCORRECTO);
+		validarNumerico(telefono, ConstantesDominio.EL_TELEFONO_DEL_CLIENTE_DEBE_SER_NUMERICO);
+
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;

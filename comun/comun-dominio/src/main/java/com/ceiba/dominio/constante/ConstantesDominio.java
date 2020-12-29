@@ -143,6 +143,84 @@ public class ConstantesDominio {
 	public static final Double PRUEBA_PORCENTAJE_DOUBLE = 10.0;
 
 	/**
+	 * Longitud = 100
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_VALOR_PARAMETRO = 100;
+
+	/**
+	 * Longitud = 100
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_NOMBRE_PARAMETRO = 100;
+
+	/**
+	 * Longitud = 50
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_TIPO_PARAMETRO = 50;
+
+	/**
+	 * Longitud maxima del nombre del parametro = 100
+	 */
+	public static final String LONGITUD_MAXIMA_NOMBRE_PARAMETRO = "Longitud m\u00e1xima del nombre del par\u00e1metro = "
+			+ VALOR_LONGITUD_MAXIMA_NOMBRE_PARAMETRO;
+
+	/**
+	 * Longitud m\u00e1xima del valor del par\u00e1metro = 100
+	 */
+	public static final String LONGITUD_MAXIMA_VALOR_PARAMETRO = "Longitud m\u00e1xima del valor del par\u00e1metro = "
+			+ VALOR_LONGITUD_MAXIMA_VALOR_PARAMETRO;
+
+	/**
+	 * Longitud m\u00e1xima del tipo del par\u00e1metro = 50
+	 */
+	public static final String LONGITUD_MAXIMA_TIPO_PARAMETRO = "Longitud m\u00e1xima del tipo del par\u00e1metro = "
+			+ VALOR_LONGITUD_MAXIMA_TIPO_PARAMETRO;
+
+	/**
+	 * Longitud = 100
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_NOMBRE_CLIENTE = 100;
+
+	/**
+	 * Longitud m\u00e1xima del nombre del cliente = 100
+	 */
+	public static final String LONGITUD_MAXIMA_NOMBRE_CLIENTE = "Longitud m\u00e1xima del nombre del cliente = "
+			+ VALOR_LONGITUD_MAXIMA_NOMBRE_CLIENTE;
+
+	/**
+	 * Longitud = 100
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_EMAIL_CLIENTE = 100;
+
+	/**
+	 * Longitud m\u00e1xima del email del cliente = 100
+	 */
+	public static final String LONGITUD_MAXIMA_EMAIL_CLIENTE = "Longitud m\u00e1xima del email del cliente = "
+			+ VALOR_LONGITUD_MAXIMA_EMAIL_CLIENTE;
+
+	/**
+	 * Longitud = 10
+	 */
+	public static final Integer VALOR_LONGITUD_MAXIMA_TELEFONO_CLIENTE = 10;
+
+	/**
+	 * Longitud m\u00e1xima del email del cliente = 100
+	 */
+	public static final String LONGITUD_MAXIMA_TELEFONO_CLIENTE = "Longitud m\u00e1xima del telefono del cliente = "
+			+ VALOR_LONGITUD_MAXIMA_TELEFONO_CLIENTE;
+
+	/**
+	 * Constante estatica con el valor = El tel\u00E9fono del cliente debe ser
+	 * num\u00E9rico
+	 */
+	public static final String EL_TELEFONO_DEL_CLIENTE_DEBE_SER_NUMERICO = "El tel\u00E9fono del cliente debe ser num\u00E9rico";
+
+	/**
+	 * Constante estatica con el valor = Se debe asignar una fecha posterior a hoy
+	 * en la cita.
+	 */
+	public static final String SE_DEBE_ASIGNAR_FECHAS_POSTERIORES_CITA = "Se debe asignar una fecha posterior a hoy en la cita.";
+
+	/**
 	 * Constructor general
 	 */
 	private ConstantesDominio() {

@@ -22,6 +22,6 @@ public class ManejadorCrearUsuario implements ManejadorComandoRespuesta<ComandoU
 
 	public ComandoRespuesta<Long> ejecutar(ComandoUsuario comandoUsuario) {
 		Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);
-		return new ComandoRespuesta<>(this.servicioCrearUsuario.ejecutar(usuario), true, "Creado");
+		return new ComandoRespuesta<>(this.servicioCrearUsuario.ejecutar(usuario));
 	}
 }

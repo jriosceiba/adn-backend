@@ -58,7 +58,5 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
 
         return resultado;
     }
-    
-    
-    
+   
 }

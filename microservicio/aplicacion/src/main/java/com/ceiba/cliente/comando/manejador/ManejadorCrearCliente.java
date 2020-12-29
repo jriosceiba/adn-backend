@@ -7,10 +7,6 @@ import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.fabrica.FabricaCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
-import com.ceiba.constantes.ConstantesAplicacion;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 
 /**
@@ -48,17 +44,7 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta<ComandoC
 	 * Permite ejecutar la accion del crear y dar una respuesta a traves del comando
 	 */
 	public ComandoRespuesta<Long> ejecutar(ComandoCliente comandoCliente) {
-		try {
-			Cliente cliente = this.fabricaCliente.crear(comandoCliente);
-			return new ComandoRespuesta<>(this.servicioCrearCliente.ejecutar(cliente), true,
-					ConstantesAplicacion.REGISTRO_CREADO_CORRECTAMENTE);
-		} catch (ExcepcionDuplicidad | ExcepcionValorInvalido e) {
-			return new ComandoRespuesta<>(null, false, e.getMessage());
-		} catch (ExcepcionValorObligatorio e) {
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.HAY_CAMPOS_POR_DILIGENCIAR);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.OCURRIO_ERROR_EN_EL_SISTEMA);
-		}
+		Cliente cliente = this.fabricaCliente.crear(comandoCliente);
+		return new ComandoRespuesta<>(this.servicioCrearCliente.ejecutar(cliente));
 	}
 }

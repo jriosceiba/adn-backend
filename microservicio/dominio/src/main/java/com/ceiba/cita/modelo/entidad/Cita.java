@@ -1,6 +1,7 @@
 package com.ceiba.cita.modelo.entidad;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+import static com.ceiba.dominio.ValidadorArgumento.validarMayor;
 
 import java.time.LocalDateTime;
 
@@ -64,10 +65,11 @@ public class Cita {
 	 * @param cliente,   cliente relacionado
 	 */
 	public Cita(Long id, Long idServicio, LocalDateTime fechaHora, Long idSede, Long idCliente) {
-		validarObligatorio(idServicio, ConstantesDominio.OBLIGATORIO_SERVICIO_CITA);
 		validarObligatorio(fechaHora, ConstantesDominio.OBLIGATORIO_FECHA_HORA_CITA);
-		validarObligatorio(idSede, ConstantesDominio.OBLIGATORIO_SEDE_CITA);
 		validarObligatorio(idCliente, ConstantesDominio.OBLIGATORIO_CLIENTE_CITA);
+		validarObligatorio(idServicio, ConstantesDominio.OBLIGATORIO_SERVICIO_CITA);
+		validarObligatorio(idSede, ConstantesDominio.OBLIGATORIO_SEDE_CITA);
+		validarMayor(fechaHora, LocalDateTime.now(), ConstantesDominio.SE_DEBE_ASIGNAR_FECHAS_POSTERIORES_CITA);
 		this.id = id;
 		this.idServicio = idServicio;
 		this.fechaHora = fechaHora;

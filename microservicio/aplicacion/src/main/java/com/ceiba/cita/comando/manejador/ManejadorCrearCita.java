@@ -7,10 +7,6 @@ import com.ceiba.cita.comando.ComandoCita;
 import com.ceiba.cita.comando.fabrica.FabricaCita;
 import com.ceiba.cita.modelo.entidad.Cita;
 import com.ceiba.cita.servicio.ServicioCrearCita;
-import com.ceiba.constantes.ConstantesAplicacion;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 
 /**
@@ -48,17 +44,7 @@ public class ManejadorCrearCita implements ManejadorComandoRespuesta<ComandoCita
 	 * Permite ejecutar la accion del crear y dar una respuesta a traves del comando
 	 */
 	public ComandoRespuesta<Long> ejecutar(ComandoCita comandoCita) {
-		try {
-			Cita cita = this.fabricaCita.crear(comandoCita);
-			return new ComandoRespuesta<>(this.servicioCrearCita.ejecutar(cita), true,
-					ConstantesAplicacion.REGISTRO_CREADO_CORRECTAMENTE);
-		} catch (ExcepcionDuplicidad | ExcepcionValorInvalido e) {
-			return new ComandoRespuesta<>(null, false, e.getMessage());
-		} catch (ExcepcionValorObligatorio e) {
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.HAY_CAMPOS_POR_DILIGENCIAR);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.OCURRIO_ERROR_EN_EL_SISTEMA);
-		}
+		Cita cita = this.fabricaCita.crear(comandoCita);
+		return new ComandoRespuesta<>(this.servicioCrearCita.ejecutar(cita));
 	}
 }

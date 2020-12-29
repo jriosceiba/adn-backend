@@ -3,9 +3,6 @@ package com.ceiba.parametro.comando.manejador;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.constantes.ConstantesAplicacion;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.parametro.comando.ComandoParametro;
 import com.ceiba.parametro.comando.fabrica.FabricaParametro;
@@ -48,15 +45,6 @@ public class ManejadorCrearParametro implements ManejadorComandoRespuesta<Comand
 	 */
 	public ComandoRespuesta<Long> ejecutar(ComandoParametro comandoParametro) {
 		Parametro parametro = this.fabricaParametro.crear(comandoParametro);
-		try {
-			return new ComandoRespuesta<>(this.servicioCrearParametro.ejecutar(parametro), true,
-					ConstantesAplicacion.REGISTRO_CREADO_CORRECTAMENTE);
-		} catch (ExcepcionDuplicidad e) {
-			return new ComandoRespuesta<>(null, false, e.getMessage());
-		} catch (ExcepcionValorObligatorio e) {
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.HAY_CAMPOS_POR_DILIGENCIAR);
-		} catch (Exception e) {
-			return new ComandoRespuesta<>(null, false, ConstantesAplicacion.OCURRIO_ERROR_EN_EL_SISTEMA);
-		}
+		return new ComandoRespuesta<>(this.servicioCrearParametro.ejecutar(parametro));
 	}
 }
