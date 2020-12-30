@@ -34,7 +34,7 @@ public class ServicioActualizarClienteTest {
 		Cliente cliente = new ClienteTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID)
 				.conNombre(ConstantesDominio.PRUEBA).conEmail(ConstantesDominio.PRUEBA)
 				.conFechaCreacion(LocalDate.now()).conCiudad(ConstantesDominio.PRUEBA_ID)
-				.conTelefono(ConstantesDominio.PRUEBA).build();
+				.conTelefono(ConstantesDominio.PRUEBA_TELEFONO).build();
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
 		Mockito.when(repositorioCliente.existeExcluyendoId(Mockito.anyLong(), Mockito.anyString())).thenReturn(true);
 		ServicioActualizarCliente servicioActualizarCliente = new ServicioActualizarCliente(repositorioCliente);
@@ -52,7 +52,7 @@ public class ServicioActualizarClienteTest {
 		Cliente cliente = new ClienteTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID)
 				.conNombre(ConstantesDominio.PRUEBA).conEmail(ConstantesDominio.PRUEBA)
 				.conFechaCreacion(LocalDate.now()).conCiudad(ConstantesDominio.PRUEBA_ID)
-				.conTelefono(ConstantesDominio.PRUEBA).build();
+				.conTelefono(ConstantesDominio.PRUEBA_TELEFONO).build();
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
 		Mockito.when(repositorioCliente.existeExcluyendoId(Mockito.anyLong(), Mockito.anyString())).thenReturn(false);
 		doNothing().when(repositorioCliente).actualizar(cliente);

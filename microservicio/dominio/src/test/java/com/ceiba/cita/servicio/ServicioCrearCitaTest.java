@@ -38,8 +38,9 @@ public class ServicioCrearCitaTest {
 	@Test
 	public void validarCitaExistenciaPreviaTest() {
 
-		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID).conFechaHora(LocalDateTime.now())
-				.conSede(ConstantesDominio.PRUEBA_ID).conServicio(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID)
+				.conFechaHora(LocalDateTime.now().plusDays(1)).conSede(ConstantesDominio.PRUEBA_ID)
+				.conServicio(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
 		DaoParametro daoParametro = Mockito.mock(DaoParametro.class);
 		DaoCliente daoCliente = Mockito.mock(DaoCliente.class);
@@ -57,8 +58,9 @@ public class ServicioCrearCitaTest {
 	@Test
 	public void validarDescuentoCantidadTest() {
 
-		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID).conFechaHora(LocalDateTime.now())
-				.conSede(ConstantesDominio.PRUEBA_ID).conServicio(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID)
+				.conFechaHora(LocalDateTime.now().plusDays(1)).conSede(ConstantesDominio.PRUEBA_ID)
+				.conServicio(ConstantesDominio.PRUEBA_ID).build();
 		DtoParametro parametro = new ParametroTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID)
 				.conNombre(ConstantesDominio.PRUEBA).conValor(ConstantesDominio.PRUEBA_PORCENTAJE)
 				.conTipoParametro(ConstantesDominio.PRUEBA).buildDto();
@@ -87,8 +89,9 @@ public class ServicioCrearCitaTest {
 	@Test
 	public void validarDescuentoAnualTest() {
 
-		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID).conFechaHora(LocalDateTime.now())
-				.conSede(ConstantesDominio.PRUEBA_ID).conServicio(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID)
+				.conFechaHora(LocalDateTime.now().plusDays(1)).conSede(ConstantesDominio.PRUEBA_ID)
+				.conServicio(ConstantesDominio.PRUEBA_ID).build();
 		DtoParametro parametro = new ParametroTestDataBuilder().conId(ConstantesDominio.PRUEBA_ID)
 				.conNombre(ConstantesDominio.PRUEBA).conValor(ConstantesDominio.PRUEBA_PORCENTAJE)
 				.conTipoParametro(ConstantesDominio.PRUEBA).buildDto();
@@ -116,8 +119,9 @@ public class ServicioCrearCitaTest {
 	@Test
 	public void ejecutarCrearTest() {
 
-		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID).conFechaHora(LocalDateTime.now())
-				.conSede(ConstantesDominio.PRUEBA_ID).conServicio(ConstantesDominio.PRUEBA_ID).build();
+		Cita cita = new CitaTestDataBuilder().conCliente(ConstantesDominio.PRUEBA_ID)
+				.conFechaHora(LocalDateTime.now().plusDays(1)).conSede(ConstantesDominio.PRUEBA_ID)
+				.conServicio(ConstantesDominio.PRUEBA_ID).build();
 		RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
 		DaoParametro daoParametro = Mockito.mock(DaoParametro.class);
 		DaoCliente daoCliente = Mockito.mock(DaoCliente.class);
