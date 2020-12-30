@@ -94,7 +94,7 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 	public boolean existeExcluyendoId(Long id, String nombre) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue(ConstantesInfraestructura.ID, id);
-		paramSource.addValue(ConstantesInfraestructura.NOMBRE, nombre);
+		paramSource.addValue(ConstantesInfraestructura.EMAIL, nombre);
 
 		return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
 				.queryForObject(sqlExisteExcluyendoId, paramSource, Boolean.class);

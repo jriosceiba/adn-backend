@@ -68,7 +68,7 @@ public class ConstantesInfraestructura {
 	 * Constante estatica con el valor = listar
 	 */
 	public static final String CONSULTA_LISTAR_TODOS = "listar";
-	
+
 	/**
 	 * Constante estatica con el valor = cantidadCitasDia
 	 */
@@ -195,9 +195,29 @@ public class ConstantesInfraestructura {
 	public static final String VALOR_TEST_CREAR_PARAMETRO = "{'valor': 2}";
 
 	/**
+	 * Constante estatica con el valor = {'valor': 2}
+	 */
+	public static final String VALOR_TEST_CREAR_CLIENTE = "{'valor': 2}";
+
+	/**
+	 * Constante estatica con el valor = {'valor': 2}
+	 */
+	public static final String VALOR_TEST_CREAR_CITA = "{'valor': 2}";
+
+	/**
 	 * Constante estatica con el valor = /usuarios/{id}
 	 */
 	public static final String REQUEST_COMANDO_PARAMETRO_CON_ID = "/parametros/{id}";
+
+	/**
+	 * Constante estatica con el valor = /usuarios/{id}
+	 */
+	public static final String REQUEST_COMANDO_CLIENTE_CON_ID = "/clientes/{id}";
+
+	/**
+	 * Constante estatica con el valor = /citas/{id}
+	 */
+	public static final String REQUEST_COMANDO_CITA_CON_ID = "/citas/{id}";
 
 	/**
 	 * Constante estatica con el valor = 2L
@@ -303,6 +323,26 @@ public class ConstantesInfraestructura {
 	 * Constante estatica con el valor = idCliente
 	 */
 	public static final String ID_CLIENTE_CUMPLIENDO_ANIO = "idCliente";
+
+	/**
+	 * constante estatica con el valor = 3114589745
+	 */
+	public static final String PRUEBA_TELEFONO = "3114589745";
+
+	/**
+	 * constante estatica con el valor = prueba@mail.com
+	 */
+	public static final String PRUEBA_CORREO = "prueba@mail.com";
+
+	/**
+	 * constante estatica con el valor = prueba
+	 */
+	public static final String PRUEBA = "prueba";
+
+	/**
+	 * constante estatica con el valor = 1L
+	 */
+	public static final Long PRUEBA_ID = 1L;
 
 	/**
 	 * Constructor de la clase
